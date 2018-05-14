@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+    <!--Scroll Everything except button-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tempText">
+        <!--LinearVert Everything except buttons-->
+        <LinearLayout
+            android:id="@+id/linearMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--LinearFirst Difficulty Level-->
+            <LinearLayout
+                android:id="@+id/linearFirst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="Difficulty Level:"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/easy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="Easy" />
+
+                    <RadioButton
+                        android:id="@+id/hard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Hard" />
+                </RadioGroup>
+            </LinearLayout>
+            <!--question 1-->
+            <!--<TextView-->
+            <!--android:id="@+id/q1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="RESET"-->
+            <!--android:textSize="16dp"-->
+            <!--android:textColor="@android:color/black"/>-->
+
+            <!--<RadioGroup-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_marginTop="4dp"-->
+            <!--android:layout_marginBottom="8dp">-->
+
+            <!--<RadioButton-->
+            <!--android:id="@+id/a11"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="2"-->
+            <!--android:text="a11" />-->
+
+            <!--<RadioButton-->
+            <!--android:id="@+id/a12"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="a12" />-->
+
+            <!--<RadioButton-->
+            <!--android:id="@+id/a13"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="a13" />-->
+
+            <!--<RadioButton-->
+            <!--android:id="@+id/a14"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="a14" />-->
+
+            <!--</RadioGroup>-->
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tempText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnDone"
+        android:layout_alignParentRight="true"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/btnReset"
+        android:paddingRight="8dp"
+        android:text="GOOD LUCK !"
+        android:textAppearance="?android:textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:onClick="submitAnswers"
+        android:text="DONE" />
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/btnDone"
+        android:onClick="reset"
+        android:text="RESET" />
+</RelativeLayout>
