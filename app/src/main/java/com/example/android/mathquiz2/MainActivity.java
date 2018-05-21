@@ -1,8 +1,8 @@
 package com.example.android.mathquiz2;
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         String s;
         TextView tv;
         RadioButton rb;
+        RadioGroup rg;
 
         easy = rbEasy.isChecked();
         if (easy) s = "EASY";
@@ -93,7 +94,10 @@ public class MainActivity extends AppCompatActivity {
                 rb.setText("" + q);
                 if (q == z) ans[i] = j;
             }
+            rg = findViewById(i * 10 + 5);
+            rg.clearCheck();
         }
+        correctAns = 0;
     }
 
     public TextView addTv(int id) {
